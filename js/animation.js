@@ -32,6 +32,7 @@ const button = document.querySelector(".btn"),
     room = document.querySelector(".empty-room"),
     flash = document.querySelector(".flash");
 
+// These 
 // These are the text elements that hold messages to be displayed in the respective screes
 
 const blackText = document.querySelectorAll(".bb-text"), // msgs in the dark room scene
@@ -88,7 +89,7 @@ const transition = (currentScene) => {
     one by one, a button(bulb) appears and the user is asked to click the button to swith on the lights.
 */ 
 
-CTAtext.innerHTML = "Click the Light Bulb.";
+CTAtext.innerHTML = "...";
 
 readMsg(blackText);
 
@@ -96,52 +97,52 @@ button.addEventListener("click",function(){
     
     if(button.classList.contains("switch")) {
 
-        /* 
-            When the switch is pressed, the black div will wipe out and the backgroung scene with no 
-            elements will appear, signifying that the lights are turned on and the room is empty. Then 
-            the msg will be displayed after which, the user will be asked to move out and the button with
-            door icon will appear. 
-        */
+    //     /* 
+    //         When the switch is pressed, the black div will wipe out and the backgroung scene with no 
+    //         elements will appear, signifying that the lights are turned on and the room is empty. Then 
+    //         the msg will be displayed after which, the user will be asked to move out and the button with
+    //         door icon will appear. 
+    //     */
 
-        light.play();
+    //     light.play();
         transition(darkroom);
-        CTAtext.innerHTML = "Click the Door";
-        setTimeout(function() {
-            button.classList.add("door-out");
+    //     CTAtext.innerHTML = "Click the Door";
+    //     setTimeout(function() {
+    //         button.classList.add("door-out");
             button.classList.remove("switch");
-            darkroom.style.display = "none";
-            readMsg(roomText); 
-        },4000);
-    }
+    //         darkroom.style.display = "none";
+    //         readMsg(roomText); 
+    //     },4000);
+    // }
 
-    else if(button.classList.contains("door-out")) {
+    // else if(button.classList.contains("door-out")) {
 
         /* 
             when the door is pressed, scene changes to cemetry. Again, the msg will be displayed, after 
             which, the user will be asked to come inside and the button with door will appear again.
         */
         
-        door.play();
-        transition(room);
-        setTimeout(function() {
-            haunt.play();
-            haunt.loop = true;
-            button.classList.add("door-in");
-            button.classList.remove("door-out");
+    //     door.play();
+    //     transition(room);
+    //     setTimeout(function() {
+    //         haunt.play();
+    //         haunt.loop = true;
+    //         button.classList.add("door-in");
+    //         button.classList.remove("door-out");
             room.style.display = "none";
-            readMsg(hallText); 
-        },4000);
-    }
+    //         readMsg(hallText); 
+    //     },4000);
+    // }
 
-    else if(button.classList.contains("door-in")) {
+    // else if(button.classList.contains("door-in")) {
 
         /* 
             when the door is pressed, scene changes to the gift room. Again, the msg will be displayed, after 
             which, the user will be asked to open the gift and the button with gift will appear.
         */
         
-        door.play();
-        transition(hallway);
+        // door.play();
+        // transition(hallway);
         CTAtext.innerHTML = "Click the Gift";
         setTimeout(function() {
             button.classList.add("gift");
